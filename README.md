@@ -32,13 +32,13 @@ FigureMassFunctionSelected.py\
 FigureConstraintsMonochromatic.py\
 \
 **Figure 4.5**\
-FigureConstraintsCC.py;\
-FigureConstraintsLN.py;\
+FigureConstraintsCC.py\
+FigureConstraintsLN.py\
 FigureConstraintsPL.py\
 \
 **Figure 4.6**\
-FigureConstraintsCC+Clusterin.py;\
-FigureConstraintsLN+Clustering.py;\
+FigureConstraintsCC+Clusterin.py\
+FigureConstraintsLN+Clustering.py\
 FigureConstraintsPL+Cluestering.py\
 \
 **Figure 4.7**\
