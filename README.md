@@ -6,41 +6,41 @@ These codes are based on the work developed in Abram Pérez Herrero's final thes
 
 Once this action is done, the following codes generate a txt with the data of the constraints on the abundance of primordial black holes: 
 
- ConstraintsCC.py  # To obtain the constraints for a Critical Collapse mass function
- ConstraintsLN.py  # To obtain the constraints for a Log-Normal mass function
- ConstraintsPL.py  # To obtain the constraints for a Power-Law mass function
- ConstraintsMonochromatic.py # To obtain the constraints for a monochromatic mass function
- Monochromaticlowmass.py  # To obtain the constraints for a monochromatic mass function and lower masses
+ ConstraintsCC.py  # To obtain the constraints for a Critical Collapse mass function\
+ ConstraintsLN.py  # To obtain the constraints for a Log-Normal mass function\
+ ConstraintsPL.py  # To obtain the constraints for a Power-Law mass function\
+ ConstraintsMonochromatic.py # To obtain the constraints for a monochromatic mass function\
+ Monochromaticlowmass.py  # To obtain the constraints for a monochromatic mass function and lower masses\
  
 Also, all the mass function described in the work are defined in MassFunction.py
 
 The Figures are obtained with the following codes:
 
-**Figure 3.2**
-FigureTotalMargeRateMonochromatic.py
-
-**Figure 3.3**
-FiguredRdmdm2D.py
-
-**Figure 3.4**
-FiguratotalmergeExtendedMassFunction.py
-
-**Figure 4.2**
-FigureMassFunctionSelected.py
-
-**Figure 4.4**
-FigureConstraintsMonochromatic.py
-
-**Figure 4.5**
-FigureConstraintsCC.py;
-FigureConstraintsLN.py;
-FigureConstraintsPL.py
-
-**Figure 4.6**
-FigureConstraintsCC+Clusterin.py;
-FigureConstraintsLN+Clustering.py;
-FigureConstraintsPL+Cluestering.py
-
-**Figure 4.7**
-ComparisonMonochromatic.py;
+**Figure 3.2**\
+FigureTotalMargeRateMonochromatic.py\
+\
+**Figure 3.3**\
+FiguredRdmdm2D.py\
+\
+**Figure 3.4**\
+FiguratotalmergeExtendedMassFunction.py\
+\
+**Figure 4.2**\
+FigureMassFunctionSelected.py\
+\
+**Figure 4.4**\
+FigureConstraintsMonochromatic.py\
+\
+**Figure 4.5**\
+FigureConstraintsCC.py;\
+FigureConstraintsLN.py;\
+FigureConstraintsPL.py\
+\
+**Figure 4.6**\
+FigureConstraintsCC+Clusterin.py;\
+FigureConstraintsLN+Clustering.py;\
+FigureConstraintsPL+Cluestering.py\
+\
+**Figure 4.7**\
+ComparisonMonochromatic.py;\
 ComparisonLN.py
