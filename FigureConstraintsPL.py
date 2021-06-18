@@ -48,7 +48,7 @@ f22=RT.opentxt("listfile/P-L22.txt"," ")[1]
 plt.fill_between(Mc4,f4,1, color='red',alpha=0.2)
 plt.plot(Mc4,f4,'r',label="$\\alpha=4$")
 plt.fill_between(Mc27,f27,1, color='darkblue',alpha=0.2)
-plt.plot(Mc27,f27,'b',label="$\\alpha=2.7$")
+plt.plot(Mc27,f27,'c',label="$\\alpha=2.7$")
 plt.fill_between(Mc22,f22,1, color='mediumpurple',alpha=0.2)
 plt.plot(Mc22,f22,'indigo',label="$\\alpha=2.2$")
 plt.legend(loc="lower left")

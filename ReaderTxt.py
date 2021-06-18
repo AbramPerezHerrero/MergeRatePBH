@@ -5,7 +5,7 @@ Program to open txt data.
 @author: Abram Perez Herrero
 """
 import numpy as np
-def opentxt(file,separator):
+def opentxt(file,separator,cutoff="yes"):
     '''
     Read the txt data in two colums.
 
@@ -36,13 +36,13 @@ def opentxt(file,separator):
     m=0
     j=len(M)
     for i in np.arange(0,len(M),1): 
-       M[i]=float(M[i])
-       f[i]=float(f[i])
+            M[i]=float(M[i])
+            f[i]=float(f[i])
     for i in np.arange(0,int(len(M)/2),1):
-        if f[i]==1:
-            m=i
+                if f[i]==1 and cutoff=='yes':
+                    m=i
     for i in np.arange(int(len(M)/2),len(M),1):
-        if f[i]==1:
-            j=i  
-    
+                if f[i]==1 and cutoff=='yes':
+                    j=i  
+
     return [np.array(M)[m:j],np.array(f)[m:j]]

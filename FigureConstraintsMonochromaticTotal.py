@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Code for plot  the constraints of PBH assuming Monochromatic.
+Code for plot  the constraints of PBH assuming Monochromatic estimed.
 @author: Abram Pérez Herrero
 @Reference: https://github.com/bradkav/PBHbounds/
 @Date:14/06/21
@@ -56,26 +56,23 @@ Mcinter3=np.concatenate((Mc[len(f)-1:len(f)],MHigh[0:1]))
 # finter=interp1d(Mcinter,finter,kind='linear')
 # Mcinter=np.linspace(Mclow[82],Mc[0],10)
 
-plt.fill_between(Mcinter,finter,1, color='blue',alpha=0.1)
-plt.plot(Mcinter,finter,'b--',label=r'Interpolation')
 
-plt.fill_between(Mcinter2,finter2,1, color='blue',alpha=0.1)
-plt.plot(Mcinter2,finter2,'b--')
 
-plt.fill_between(Mcinter3,finter3,1, color='blue',alpha=0.05)
-plt.plot(Mcinter3,finter3,'b--')
+plt.fill_between(Mcinter2,finter2,1, color='red',alpha=0.2)
+plt.plot(Mcinter2,finter2,'r--',label=r'Interpolation')
 
-plt.fill_between(McO3,fO3,1, color='orange',alpha=0.2)
-plt.plot(McO3,fO3,'C1--',label=r'LM $\rm{O_{1}}$- $\rm{O_{3}}$')
+plt.fill_between(Mcinter3,finter3,1, color='red',alpha=0.2)
+plt.plot(Mcinter3,finter3,'r--')
 
-plt.fill_between(Mclow,flow,1, color='purple',alpha=0.2)
-plt.plot(Mclow,flow,'purple',label=r'LM $\rm{O_{2}}$')
+plt.fill_between(McO3,fO3,1, color='red',alpha=0.2)
+plt.plot(McO3,fO3,'red')
+
 
 plt.fill_between(Mc,f,1, color='red',alpha=0.2)
-plt.plot(Mc,f,'r',label=r'IM Result')
+plt.plot(Mc,f,'r')
 
-plt.fill_between(MHigh,fHigh,1, color='green',alpha=0.2)
-plt.plot(MHigh,fHigh,'g',label=r'HM')
+plt.fill_between(MHigh,fHigh,1, color='red',alpha=0.2)
+plt.plot(MHigh,fHigh,'red',label=r'Result')
 
 plt.legend(loc="lower left")
 ax = plt.gca()
@@ -114,5 +111,5 @@ ax_top.xaxis.set_tick_params(pad=0)
 ax_top.set_xticks(g_ticks_minor*g_to_Msun,minor=True)
 ax_top.set_xticklabels([],minor=True)
 
-plt.savefig("Plots/constraintsMonochromatic.pdf", bbox_inches='tight')
+plt.savefig("Plots/constraintsMonochromaticTotal.pdf", bbox_inches='tight')
     

@@ -5,15 +5,11 @@ Created on Mon Jun 14 20:04:55 2021
 @author: aph278
 """
 from scipy import optimize
-import time as time
-from scipy.integrate import dblquad 
-import matplotlib.pyplot as plt
 import MassFunction as MF
 import numpy as np
-import matplotlib as mpl
 import ReaderTxt as RT
 from scipy.interpolate import interp1d
-from scipy.optimize import fsolve
+
 Nmax=30
 
 v1=np.linspace(1e-4,1e-3,Nmax)
@@ -22,11 +18,12 @@ v3=np.linspace(1e-2,1e-1,Nmax)
 v4=np.linspace(1e-1,1,Nmax)
 fx=np.concatenate((v1[0:29],v2[0:29],v3[0:29],v4))
 #O2
-McArti=(RT.opentxt('210200868/Arti2012.089.txt',' ')[0])*2**(1/5)
-fArti=RT.opentxt('210200868/Arti2012.089.txt',' ')[1]
-#O3
-McArtiO3=(RT.opentxt('2106.08979/O3Subsolarmass.txt',' ')[0])*2**(1/5)
-fArtiO3=RT.opentxt('2106.08979/O3Subsolarmass.txt',' ')[1]
+Ta=0.428
+McArti=np.loadtxt('19060800/19060800.txt',dtype=float)[:,0]
+fArti=np.loadtxt('19060800/19060800.txt',dtype=float)[:,1]
+R90=np.zeros((len(fArti)))
+for i in np.arange(0,len(fArti),1):
+ R90[i]=fArti[i]**(-3)*(-np.log(0.1)*3/(4*np.pi*Ta))
 
 def mergeRateMono(f,m):
     '''
@@ -109,7 +106,7 @@ Mmin=0
 Mmax=100
 a=0
 
-fval=np.zeros((len(fArti)))
+fval=np.zeros((len(R90)))
 A=np.zeros((len(fx))); 
 for M01 in McArti:
     I=MF.normalization("monochromatic",M0=M01)
@@ -121,35 +118,13 @@ for M01 in McArti:
         l=l+1
     inter=interp1d(fx, A, kind='linear')
     def solution(f):
-        return inter(f)-fArti[a]
+        return inter(f)-R90[a]
     try:fval[a]=optimize.brentq(solution,1e-4,1) 
     except ValueError: fval[a]=1
     print(fval[a])
     a=a+1
-namefile='MonochromaticLowMassO2'
+namefile='MonochromaticHighMass'
 data = np.column_stack([McArti,fval])
 datafile_path = 'listfile/' + namefile+'.txt'
 np.savetxt(datafile_path , data, fmt='%10.10f')
 
-fval=np.zeros((len(fArtiO3)))
-A=np.zeros((len(fx))); 
-a=0
-for M01 in McArtiO3:
-    I=MF.normalization("monochromatic",M0=M01)
-    l=0
-    for f in fx:
-        # def mergeRatef(Mj,Mi):
-        #     return mergeRate(Mi,Mj,f,I,M01)   
-        A[l]=mergeRateMono(f, M01) #dblquad(mergeRatef,Mmin,Mmax,Mmin,Mmax)[0]
-        l=l+1
-    inter=interp1d(fx, A, kind='linear')
-    def solution(f):
-        return inter(f)-fArtiO3[a]
-    try:fval[a]=optimize.brentq(solution,1e-4,1) 
-    except ValueError: fval[a]=1
-    print(fval[a])
-    a=a+1
-namefile='MonochromaticLowMassO3'
-data = np.column_stack([McArtiO3,fval])
-datafile_path = 'listfile/' + namefile+'.txt'
-np.savetxt(datafile_path , data, fmt='%10.10f')

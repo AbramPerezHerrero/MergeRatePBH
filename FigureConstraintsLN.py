@@ -49,7 +49,7 @@ f04=RT.opentxt("listfile/LN04.txt",' ')[1]
 plt.fill_between(Mc1,f1,1, color='red',alpha=0.2)
 plt.plot(Mc1,f1,'r',label="$\\sigma=1$")
 plt.fill_between(Mc06,f06,1, color='darkblue',alpha=0.2)
-plt.plot(Mc06,f06,'b',label="$\\sigma=0.6$")
+plt.plot(Mc06,f06,'c',label="$\\sigma=0.6$")
 plt.fill_between(Mc04,f04,1, color='mediumpurple',alpha=0.2)
 plt.plot(Mc04,f04,'indigo',label="$\\sigma=0.4$")
 plt.legend(loc="lower left")
