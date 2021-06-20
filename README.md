@@ -38,9 +38,9 @@ FigureConstraintsMonochromatic.py  ![Monochromatic](https://github.com/AbramPere
 FigureConstraintsMonochromatic.py  ![MonochromaticTotal](https://github.com/AbramPerezHerrero/MergeRatePBH/blob/7205f45581f6835d1986202d884e20ee98221a00/Plots/constraintsMonochromaticTotal.pdf)\
 \
 **Figure 4.6**\
-FigureConstraintsCC.py ![CC](https://github.com/AbramPerezHerrero/MergeRatePBH/blob/1867d2af4edae471a63beb479bc6b445b1ee59a4/Plots/constraintsCC.pdf)\
-FigureConstraintsLN.py ![LN](https://github.com/AbramPerezHerrero/MergeRatePBH/blob/1867d2af4edae471a63beb479bc6b445b1ee59a4/Plots/constraintsLN.pdf)\
-FigureConstraintsPL.py ![PL](https://github.com/AbramPerezHerrero/MergeRatePBH/blob/1867d2af4edae471a63beb479bc6b445b1ee59a4/Plots/constraintsPL.pdf)\
+FigureConstraintsCC.py ![CC](https://github.com/AbramPerezHerrero/MergeRatePBH/blob/42432fb301a9786aaaa10f9c8a7a733079a2ddb8/Plots/constraintsCC.pdf)\
+FigureConstraintsLN.py ![LN](https://github.com/AbramPerezHerrero/MergeRatePBH/blob/42432fb301a9786aaaa10f9c8a7a733079a2ddb8/Plots/constraintsLN.pdf)\
+FigureConstraintsPL.py ![PL](https://github.com/AbramPerezHerrero/MergeRatePBH/blob/42432fb301a9786aaaa10f9c8a7a733079a2ddb8/Plots/constrainTsPL.pdf)\
 \
 **Figure 4.7**\
 FigureConstraintsCC+Clustering.py ![CC+clustering](https://github.com/AbramPerezHerrero/MergeRatePBH/blob/1867d2af4edae471a63beb479bc6b445b1ee59a4/Plots/constraintsCC+Clustering.pdf)\
