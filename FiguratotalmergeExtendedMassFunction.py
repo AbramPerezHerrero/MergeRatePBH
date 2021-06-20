@@ -7,7 +7,7 @@ Code for obtain the plot 3.4 of the work
 
 from scipy.integrate import dblquad as din
 import matplotlib.pyplot as plt
-import MassFunction4 as MF
+import MassFunction as MF
 import numpy as np
 import matplotlib as mpl
 #Normalization of the different mass function used

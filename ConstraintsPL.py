@@ -205,11 +205,11 @@ for alpha1 in [4,2.7,2.2]:
         p=p+1            
         elapsed_time = time() - start_time
         print('time(s):',elapsed_time)
-    #Save the data in a txt document.   
-    data = np.column_stack([Mcvalues, fval])
-    datafile_path = 'listfile/' + namefile+'.txt'
-    np.savetxt(datafile_path , data, fmt='%10.10f')
-    fval=np.zeros([len(Mcvalues)])
-    p=0
+    # #Save the data in a txt document.   
+    # data = np.column_stack([Mcvalues, fval])
+    # datafile_path = 'listfile/' + namefile+'.txt'
+    # np.savetxt(datafile_path , data, fmt='%10.10f')
+    # fval=np.zeros([len(Mcvalues)])
+    # p=0
 
     

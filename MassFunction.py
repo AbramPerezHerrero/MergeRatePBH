@@ -20,7 +20,7 @@ def funf(delta,M,Mmin):
 def S(M,Mmin,delta):
   if M<Mmin:
     return 0.0
-  elif Mmin<=M and M<Mmin+delta:
+  elif Mmin<M and M<(Mmin+delta):
     return (funf(delta,M,Mmin)+1)**(-1)
   elif M>(Mmin+delta):
     return 1
@@ -28,7 +28,7 @@ def Gaussian(M,sigma,mu):
   return (1/np.sqrt(2*np.pi*sigma**2))*np.exp(-(M-mu)**2/(2*sigma**2))
 
 
-def normalization(x,Mmin=3,Mmax=90,Mc=15,alpha=2.63,delta=4.82,beta=2.85,
+def normalization(x,Mmin=3,Mmax=np.inf,Mc=15,alpha=2.63,delta=4.82,beta=2.85,
                   sigma=0.6,mu3=20,M0=30):
     '''
     Function that provides the normalisation value for each of the functions.
@@ -66,7 +66,7 @@ def normalization(x,Mmin=3,Mmax=90,Mc=15,alpha=2.63,delta=4.82,beta=2.85,
                      return M**(-alpha)*S(M,Mmin,delta)
                  else:
                      return 0
-        return inte(powerLawnormal,0,np.inf)[0]
+        return inte(powerLawnormal,Mmin,np.inf)[0]
     elif  x=="LogNormal":
         def logNormalnormal(M):
                 return (1/(np.sqrt(2*np.pi)*sigma*M))*np.exp(-(np.log(M/Mc))**2/(2*sigma**2))
