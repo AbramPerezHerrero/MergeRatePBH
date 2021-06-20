@@ -47,6 +47,7 @@ FigureConstraintsCC+Clustering.py ![CC+clustering](https://github.com/AbramPerez
 FigureConstraintsLN+Clustering.py  ![LN+clustering](https://github.com/AbramPerezHerrero/MergeRatePBH/blob/c0f31f61589d80dcb7e3bf4a6061792b2a79f91c/Plots/constraintsLNCl.pdf)\
 FigureConstraintsPL+Cluestering.py  ![PL+clustering](https://github.com/AbramPerezHerrero/MergeRatePBH/blob/c0f31f61589d80dcb7e3bf4a6061792b2a79f91c/Plots/constraintsPLCL.pdf)\
 \
+It is possible to change the merge rate data used for the comparison. For that, you have to add a txt with  in the first colunm the PBH mass and in the second the upper limit of the merge rate credible region and changing the txt names in each code. \
 **Figure 4.8**\
 ComparisonMonochromatic.py  ![MonoComparison](https://github.com/AbramPerezHerrero/MergeRatePBH/blob/fa0a2b4606c7df0fcf1de74bd539a58e74f493e9/Plots/constrainsPLCL.pdf)\
 ComparisonLN.py  ![LNComparison](https://github.com/AbramPerezHerrero/MergeRatePBH/blob/fa0a2b4606c7df0fcf1de74bd539a58e74f493e9/Plots/constrainsPLCL.pdf)\
