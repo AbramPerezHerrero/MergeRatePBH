@@ -17,8 +17,8 @@ Also, all the mass function described in the work are defined in MassFunction.py
 The Figures are obtained with the following codes:
 
 **Figure 3.2**\
-FigureTotalMargeRateMonochromatic.py  ![TMergeRateMonochromatic](https://github.com/AbramPerezHerrero/MergeRatePBH/blob/850d26bf4e370f766f7fe2db536c4f2a2698a4c5/Plots/MergerateMonocrhomatic.pdf)\
-
+FigureTotalMargeRateMonochromatic.py  ![TMergeRateMonochromatic](https://github.com/AbramPerezHerrero/MergeRatePBH/blob/850d26bf4e370f766f7fe2db536c4f2a2698a4c5/Plots/MergerateMonocrhomatic.pdf)
+\
 **Figure 3.3**\
 FiguredRdmdm2D.py  ![DifferentialMergeRate](https://github.com/AbramPerezHerrero/MergeRatePBH/blob/850d26bf4e370f766f7fe2db536c4f2a2698a4c5/Plots/dRdmdmPlot2D.pdf)\
 \
@@ -43,9 +43,9 @@ FigureConstraintsLN.py ![LN](https://github.com/AbramPerezHerrero/MergeRatePBH/b
 FigureConstraintsPL.py ![PL](https://github.com/AbramPerezHerrero/MergeRatePBH/blob/42432fb301a9786aaaa10f9c8a7a733079a2ddb8/Plots/constrainTsPL.pdf)\
 \
 **Figure 4.7**\
-FigureConstraintsCC+Clustering.py ![CC+clustering](https://github.com/AbramPerezHerrero/MergeRatePBH/blob/1867d2af4edae471a63beb479bc6b445b1ee59a4/Plots/constraintsCC+Clustering.pdf)\
-FigureConstraintsLN+Clustering.py  ![LN+clustering](https://github.com/AbramPerezHerrero/MergeRatePBH/blob/fa0a2b4606c7df0fcf1de74bd539a58e74f493e9/Plots/constrainsLNCl.pdf)\
-FigureConstraintsPL+Cluestering.py  ![PL+clustering](https://github.com/AbramPerezHerrero/MergeRatePBH/blob/fa0a2b4606c7df0fcf1de74bd539a58e74f493e9/Plots/constrainsPLCL.pdf)\
+FigureConstraintsCC+Clustering.py ![CC+clustering](https://github.com/AbramPerezHerrero/MergeRatePBH/blob/c0f31f61589d80dcb7e3bf4a6061792b2a79f91c/Plots/constraintsCCClustering.pdf)\
+FigureConstraintsLN+Clustering.py  ![LN+clustering](https://github.com/AbramPerezHerrero/MergeRatePBH/blob/c0f31f61589d80dcb7e3bf4a6061792b2a79f91c/Plots/constraintsLNCl.pdf)\
+FigureConstraintsPL+Cluestering.py  ![PL+clustering](https://github.com/AbramPerezHerrero/MergeRatePBH/blob/c0f31f61589d80dcb7e3bf4a6061792b2a79f91c/Plots/constraintsPLCL.pdf)\
 \
 **Figure 4.8**\
 ComparisonMonochromatic.py  ![MonoComparison](https://github.com/AbramPerezHerrero/MergeRatePBH/blob/fa0a2b4606c7df0fcf1de74bd539a58e74f493e9/Plots/constrainsPLCL.pdf)\
