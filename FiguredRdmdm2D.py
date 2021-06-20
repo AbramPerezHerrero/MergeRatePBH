@@ -9,7 +9,7 @@ import seaborn as sns;
 import numpy as np
 from pandas import DataFrame
 import matplotlib.pyplot as plt
-import MassFunction4 as MF
+import MassFunction as MF
 import matplotlib as mpl
 
 #characteristics of the plots.
@@ -35,16 +35,16 @@ mpl.rc('text', usetex=True)
 
 normlog=MF.normalization("LogNormal",sigma=0.6,Mc=30)
 normpower=MF.normalization("powerLaw",alpha=2.2,delta=30)
-normcc=MF.normalization("criticalCollapse",beta=2.2,Mc=20)
+normcc=MF.normalization("criticalCollapse",beta=2.85,Mc=20)
 
 #The three mass function considered, where we put the normalization and the 
 # value of the parameters used
 def powerLaw(M):
-    return MF.powerLaw(M,normpower,delta=30)
+    return MF.powerLaw(M,A=normpower,delta=30)
 def logNormal(M):
-    return MF.logNormal(M,normlog,Mc=30)
+    return MF.logNormal(M,A=normlog,Mc=30,sigma=0.6)
 def criticalCollapse(M):
-    return MF.criticalCollapse(M,normcc,Mc=20)
+    return MF.criticalCollapse(M,A=normcc,Mc=20,beta=2.85)
 
 # Merge Rate obtained in the work, equation 3.58
 def mergeRate(Mi,Mj,f,function):
@@ -85,7 +85,7 @@ b1.set_ylabel('$M_{1}/M_{\odot}$',size=9)
 b1.set_xlabel('$M_{2}/M_{\odot}$',size=9)
 ax[0].invert_yaxis()
 ax[0].text(8,12,'Gpc$^{-3}\:$yr$^{-1}\:M_{\\odot}^{-2}$', fontsize=6)
-
+b1.set_facecolor('white')
 df=DataFrame(A2, index, columns)
 mask = np.zeros_like(df)
 mask[np.tril_indices_from(mask,-1)] = True
@@ -93,6 +93,7 @@ b2=sns.heatmap(df,cmap="plasma",mask=mask, square=True,cbar=True,ax=ax[1],cbar_k
 b2.set_ylabel('')
 b2.set_xlabel('$M_{2}/M_{\odot}$',size=9)
 b2.set_yticks([])
+b2.set_facecolor('white')
 ax[1].invert_yaxis()
 ax[1].text(8,12,'Gpc$^{-3}\:$yr$^{-1}\:M_{\\odot}^{-2}$', fontsize=6)
 df=DataFrame(A3, index, columns)
@@ -104,11 +105,11 @@ b3.set_xlabel('$M_{2}/M_{\odot}$',size=9)
 b3.set_yticks([])
 ax[2].invert_yaxis()
 ax[2].text(8,12,'Gpc$^{-3}\:$yr$^{-1}\:M_{\\odot}^{-2}$', fontsize=6)
+b3.set_facecolor('white')
 
-
-ax[0].set_title("Power-Law",size=12,style='italic')
-ax[1].set_title("Log-Normal",size=12,style='italic')
-ax[2].set_title("C.Collapse",size=12,style='italic')
+ax[0].set_title("Power-Law",size=11.5,style='italic')
+ax[1].set_title("Log-Normal",size=11.5,style='italic')
+ax[2].set_title("C.Collapse",size=11.5,style='italic')
 
 
 #Save the fifure in eps and pdf format.

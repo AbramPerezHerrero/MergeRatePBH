@@ -88,5 +88,5 @@ ax_top.xaxis.set_tick_params(pad=0)
 ax_top.set_xticks(g_ticks_minor*g_to_Msun,minor=True)
 ax_top.set_xticklabels([],minor=True)
 
-plt.savefig("Plots/constrainsPL.pdf", bbox_inches='tight')
+plt.savefig("Plots/constraintsPL.pdf", bbox_inches='tight')
     

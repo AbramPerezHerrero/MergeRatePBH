@@ -28,7 +28,7 @@ mpl.rcParams['ytick.right'] = True
 mpl.rcParams['font.family'] = 'serif'
 mpl.rc('text', usetex=True)
 mpl.rcParams['legend.edgecolor'] = 'inherit'
-plt.axhspan(1, 1.5, facecolor='grey', alpha=0.5)  
+#plt.axhspan(1, 1.5, facecolor='grey', alpha=0.5)  
 plt.ylim(1e-5, 1.5)
 xmin = 1e-2
 xmax = 1e3

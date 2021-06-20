@@ -27,7 +27,7 @@ mpl.rcParams['ytick.right'] = True
 mpl.rcParams['font.family'] = 'serif'
 mpl.rc('text', usetex=True)
 mpl.rcParams['legend.edgecolor'] = 'inherit'
-plt.axhspan(1, 1.5, facecolor='grey', alpha=0.5)  
+#plt.axhspan(1, 1.5, facecolor='grey', alpha=0.5)  
 plt.ylim(1e-5, 1.5)
 xmin = 1e-2
 xmax = 1e3
@@ -88,5 +88,5 @@ ax_top.xaxis.set_tick_params(pad=0)
 ax_top.set_xticks(g_ticks_minor*g_to_Msun,minor=True)
 ax_top.set_xticklabels([],minor=True)
 
-plt.savefig("Plots/constrainsCC.pdf", bbox_inches='tight')
+plt.savefig("Plots/constraintsCC.pdf", bbox_inches='tight')
     

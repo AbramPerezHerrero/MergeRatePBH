@@ -28,7 +28,7 @@ mpl.rcParams['ytick.right'] = True
 mpl.rcParams['font.family'] = 'serif'
 mpl.rc('text', usetex=True)
 mpl.rcParams['legend.edgecolor'] = 'inherit'
-plt.axhspan(1, 1.5, facecolor='grey', alpha=0.5)  
+#plt.axhspan(1, 1.5, facecolor='grey', alpha=0.5)  
 plt.ylim(1e-5, 1.5)
 xmin = 1e-2
 xmax = 1e3
@@ -41,21 +41,39 @@ Mclow=RT.opentxt("listfile/MonochromaticLowMass.txt"," ")[0]
 flow=RT.opentxt("listfile/MonochromaticLowMass.txt"," ")[1]
 Mc=RT.opentxt("listfile/Monochromatic.txt"," ")[0]
 f=RT.opentxt("listfile/Monochromatic.txt"," ")[1]
+fO3=RT.opentxt("listfile/MonochromaticLowMassO3.txt"," ")[1]
+McO3=RT.opentxt("listfile/MonochromaticLowMassO3.txt"," ")[0]
+fHigh=RT.opentxt("listfile/MonochromaticHighMass.txt"," ")[1]
+MHigh=RT.opentxt("listfile/MonochromaticHighMass.txt"," ")[0]
+
+finter=np.concatenate((flow[82:83],f[0:1]))
+Mcinter=np.concatenate((Mclow[82:83],Mc[0:1]))
+
+finter2=np.concatenate((fO3[len(fO3)-1:len(fO3)],f[0:1]))
+Mcinter2=np.concatenate((McO3[len(fO3)-1:len(fO3)],Mc[0:1]))
+
+finter3=np.concatenate((f[len(f)-1:len(f)],fHigh[0:1]))
+Mcinter3=np.concatenate((Mc[len(f)-1:len(f)],MHigh[0:1]))
+# finter=interp1d(Mcinter,finter,kind='linear')
+# Mcinter=np.linspace(Mclow[82],Mc[0],10)
 
 
-finter=np.array((flow[39],f[0]))
-Mcinter=np.array((Mclow[39],Mc[0]))
+
+plt.fill_between(Mcinter2,finter2,1, color='red',alpha=0.2)
+plt.plot(Mcinter2,finter2,'r--',label=r'Interpolation')
+
+plt.fill_between(Mcinter3,finter3,1, color='red',alpha=0.2)
+plt.plot(Mcinter3,finter3,'r--')
+
+plt.fill_between(McO3,fO3,1, color='red',alpha=0.2)
+plt.plot(McO3,fO3,'red')
 
 
-
-plt.fill_between(Mcinter,finter,1, color='red',alpha=0.2)
-plt.plot(Mcinter,finter,'r--',label=r'Interpolation')
-
-plt.fill_between(Mclow,flow,1, color='red',alpha=0.2)
-plt.plot(Mclow,flow,'r',label=r'Result')
 plt.fill_between(Mc,f,1, color='red',alpha=0.2)
 plt.plot(Mc,f,'r')
 
+plt.fill_between(MHigh,fHigh,1, color='red',alpha=0.2)
+plt.plot(MHigh,fHigh,'red',label=r'Result')
 #Load data and plot Gert Hutsi article
 McArti=np.load("201202786/MonochromaticArticle.npy")[:,0]
 fArti=np.load("201202786/MonochromaticArticle.npy")[:,1]
@@ -63,8 +81,8 @@ McArtilow=RT.opentxt("201202786/SubsolarmassMonochromatic.txt"," ")[0]
 fArtilow=RT.opentxt("201202786/SubsolarmassMonochromatic.txt"," ")[1]
 
 
-plt.fill_between(McArtilow,fArtilow,1, color='black',alpha=0.1)
-plt.plot(McArtilow,fArtilow,'k--',label=r"S.solar Gert Hutsi et al. ")
+# plt.fill_between(McArtilow,fArtilow,1, color='black',alpha=0.1)
+# plt.plot(McArtilow,fArtilow,'k--',label=r"S.solar Gert Hutsi et al. ")
 plt.fill_between(McArti,fArti,1, color='green',alpha=0.1)
 plt.plot(McArti,fArti,'g',label=r"Gert Hutsi et al. ")
 

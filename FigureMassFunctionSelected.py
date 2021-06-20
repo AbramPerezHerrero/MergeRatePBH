@@ -6,11 +6,11 @@ It is created in the Plots folder, with the name of MassFunctionPlot.pdf
 @author: ABRAM PÉREZ HERRERO
 """
 import matplotlib.pyplot as plt
-import MassFunction4 as MF
+import MassFunction as MF
 import numpy as np
 import matplotlib as mpl
 #Mass interval to plot
-Mx=np.linspace(3,100,1000)
+Mx=np.linspace(3.1,100,1000)
 k=0 # counter
 #Plot options
 mpl.rcParams.update({'font.size': 14,'font.family':'serif'})
@@ -43,9 +43,9 @@ c2=np.zeros((1000,1));
 c3=np.zeros((1000,1)); 
 d1=np.zeros((1000,1)); 
 for M in Mx:
-    a1[k]=MF.powerLaw(M,delta=20,alpha=4,A=MF.normalization("powerLaw",alpha=4,delta=20))
-    a2[k]=MF.powerLaw(M,delta=20,alpha=2.2,A=MF.normalization("powerLaw",alpha=2.2,delta=20))
-    a3[k]=MF.powerLaw(M,delta=20,alpha=2.7,A=MF.normalization("powerLaw",alpha=2.7,delta=20))
+    a1[k]=MF.powerLaw(M,delta=20,alpha=4,A=MF.normalization("powerLaw",alpha=4,delta=30))
+    a2[k]=MF.powerLaw(M,delta=20,alpha=2.2,A=MF.normalization("powerLaw",alpha=2.2,delta=30))
+    a3[k]=MF.powerLaw(M,delta=20,alpha=2.7,A=MF.normalization("powerLaw",alpha=2.7,delta=30))
     b1[k]=MF.logNormal(M,Mc=30,sigma=0.4,A=MF.normalization("LogNormal",sigma=0.4,Mc=30))
     b2[k]=MF.logNormal(M,Mc=30,sigma=0.6,A=MF.normalization("LogNormal",sigma=0.6,Mc=30))
     b3[k]=MF.logNormal(M,Mc=30,sigma=1,A=MF.normalization("LogNormal",sigma=1,Mc=30))

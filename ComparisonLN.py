@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Code for plot  the constraints of PBH assuming Critical-Collapse with Clustering.
+Code for plot  the constraints of PBH assuming Log-Normal.
 @author: Abram Pérez Herrero
 @Reference: https://github.com/bradkav/PBHbounds/
 @Date:14/06/21
@@ -27,7 +27,7 @@ mpl.rcParams['ytick.right'] = True
 mpl.rcParams['font.family'] = 'serif'
 mpl.rc('text', usetex=True)
 mpl.rcParams['legend.edgecolor'] = 'inherit'
-plt.axhspan(1, 1.5, facecolor='grey', alpha=0.5)  
+#plt.axhspan(1, 1.5, facecolor='grey', alpha=0.5)  
 plt.ylim(1e-5, 1.5)
 xmin = 1e-2
 xmax = 1e3
@@ -35,22 +35,23 @@ plt.xlim(xmin, xmax)
 plt.figure(figsize=(6,6))
 
 # Load data, it is import that the data are dowload
-Mc285=RT.opentxt("listfile/CC285.txt",' ')[0]
-f285=RT.opentxt("listfile/CC285.txt",' ')[1]
-Mc10=RT.opentxt("listfile/CC285Cl10.txt",' ')[0]
-f10=RT.opentxt("listfile/CC285Cl10.txt",' ')[1]
-Mc100=RT.opentxt("listfile/CC285Cl100.txt",' ')[0]
-f100=RT.opentxt("listfile/CC285Cl100.txt",' ')[1]
+Mc06=RT.opentxt("listfile/LN06.txt",' ')[0]
+f06=RT.opentxt("listfile/LN06.txt",' ')[1]
+
+McArti=np.load("201202786/arti06logtxt.npy")[:,0]
+fArti=np.load("201202786/arti06logtxt.npy")[:,1]
+
+McArtiwithout=RT.opentxt("201202786/sigma06Without.txt",' ')[0]
+fArtiwithout=RT.opentxt("201202786/sigma06Without.txt",' ')[1]
 
 
+plt.fill_between(Mc06,f06,1, color='red',alpha=0.2)
+plt.plot(Mc06,f06,'r',label=r"Result")
+plt.fill_between(McArti,fArti,1, color='green',alpha=0.2)
+plt.plot(McArti,fArti,'g',label=r"Gert Hutsi et al. ")
+plt.fill_between(McArtiwithout,fArtiwithout,1, color='green',alpha=0)
+plt.plot(McArtiwithout,fArtiwithout,'g--',label=r"N.E. Gert Hutsi et al. ")
 
-
-plt.fill_between(Mc285,f285,1, color='mediumpurple',alpha=0.3)
-plt.plot(Mc285,f285,'indigo',label="$\\zeta=1$")
-plt.fill_between(Mc10,f10,1, color='darkblue',alpha=0.1)
-plt.plot(Mc10,f10,'b--',label="$\\zeta=10$")
-plt.fill_between(Mc100,f100,1, color='red',alpha=0.1)
-plt.plot(Mc100,f100,'r--',label="$\\zeta=10^2$")
 plt.legend(loc="lower left")
 ax = plt.gca()
 ax.set_xscale('log')
@@ -88,5 +89,6 @@ ax_top.xaxis.set_tick_params(pad=0)
 ax_top.set_xticks(g_ticks_minor*g_to_Msun,minor=True)
 ax_top.set_xticklabels([],minor=True)
 
-plt.savefig("Plots/constraintsCCClustering.pdf", bbox_inches='tight')
-    
+plt.savefig("Plots/constraintsComparisonLN.pdf", bbox_inches='tight')
+plt.savefig("Plots/constraintsComparisonLN.jpg", bbox_inches='tight')
+        
