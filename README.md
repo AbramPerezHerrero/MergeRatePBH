@@ -52,4 +52,4 @@ It is possible to change the merge rate data used for the comparison. For that, 
 ComparisonMonochromatic.py  ![MonoComparison](https://github.com/AbramPerezHerrero/MergeRatePBH/blob/fa0a2b4606c7df0fcf1de74bd539a58e74f493e9/Plots/constrainsPLCL.pdf)\
 ComparisonLN.py  ![LNComparison](https://github.com/AbramPerezHerrero/MergeRatePBH/blob/fa0a2b4606c7df0fcf1de74bd539a58e74f493e9/Plots/constrainsPLCL.pdf)\
 ## References
-We have also used the data obtained from the article https://arxiv.org/abs/2010.14533 , https://arxiv.org/abs/2012.02786 and https://arxiv.org/abs/2102.00868 . Some of this data is obtained by https://apps.automeris.io/wpd/.
+We have also used the data obtained from the article https://arxiv.org/abs/2010.14533 , https://arxiv.org/abs/2012.02786 and https://arxiv.org/abs/2102.00868 . Some of this data is extracted by https://apps.automeris.io/wpd/.
